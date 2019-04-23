@@ -1,8 +1,15 @@
 import React, { Component } from 'react';
 import Header from './Header';
 import Form from './Form';
+import { obtenerDiferenciaAnio, calcularMarca, obtenerPlan } from '../helpers';
 
 class App extends Component {
+  
+  state = {
+    result: '',
+    data: {}
+  }
+  
 
   quoteSafe = (data) => {
     const { brand, year, plan } = data;
@@ -11,11 +18,28 @@ class App extends Component {
     let result = 2000;
 
     // get the years diference.
+    const diference = obtenerDiferenciaAnio(year);
 
     // for each year subtract 3% to the value
+    result -= ((diference * .03) * result);
 
     // American 15%, Asian 5%, European 30% of increment at the actual value
-     
+    result *= calcularMarca(brand);
+
+    // basic plan increment the value 20% more, and the complete plan increment the value 50% more
+    let incrementPlan = obtenerPlan(plan);
+    result *= parseFloat(incrementPlan).toFixed(2);
+
+    const dataCar = {
+      brand,
+      year,
+      plan
+    }
+
+    this.setState({
+      result: parseFloat(result).toFixed(2),
+      data: dataCar
+    });
   }
 
   render() {
