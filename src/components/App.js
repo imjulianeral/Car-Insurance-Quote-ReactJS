@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
+import { obtenerDiferenciaAnio, calcularMarca, obtenerPlan } from '../helpers';
 import Header from './Header';
 import Form from './Form';
-import { obtenerDiferenciaAnio, calcularMarca, obtenerPlan } from '../helpers';
+import Summary from './Summary';
 
 class App extends Component {
   
@@ -51,6 +52,10 @@ class App extends Component {
         <div className="contenedor-formulario">
           <Form
             quoteSafe={ this.quoteSafe }
+          />
+          <Summary
+            data={ this.state.data }
+            result={ this.state.result }
           />
         </div>
       </div>
