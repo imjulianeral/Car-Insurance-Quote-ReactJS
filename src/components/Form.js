@@ -32,7 +32,7 @@ export default class Form extends Component {
             <div>
                 <form className="cotizar-auto" onSubmit={ this.quote }>
                     <div className="campo">
-                        <label>Marca</label>
+                        <label>Brand</label>
                         <select name="marca" ref={ this.brandRef }>
                             <option value="americano">Americano</option>
                             <option value="europeo">Europeo</option>
@@ -41,7 +41,7 @@ export default class Form extends Component {
                     </div>
 
                     <div className="campo">
-                        <label>Año</label>
+                        <label>Year</label>
                         <select name="year" ref={ this.yearRef }>
                             <option value="2019">2019</option>
                             <option value="2018">2018</option>
@@ -63,7 +63,7 @@ export default class Form extends Component {
                         <input type="radio" ref={ this.completePlanRef } name="plan" value="completo"/> Completo
                     </div>
 
-                    <button type="submit" className="boton">Cotizar</button>
+                    <button type="submit" className="boton">Quote</button>
                 </form>
             </div>
         )
