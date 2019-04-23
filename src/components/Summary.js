@@ -22,7 +22,7 @@ export default class Summary extends Component {
 
         return (
             <div>
-                {this.showSummary()}
+                {this.showSummary()}            
             </div>
         )
     }

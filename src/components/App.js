@@ -3,6 +3,7 @@ import { obtenerDiferenciaAnio, calcularMarca, obtenerPlan } from '../helpers';
 import Header from './Header';
 import Form from './Form';
 import Summary from './Summary';
+import Result from './Result';
 
 class App extends Component {
   
@@ -55,6 +56,9 @@ class App extends Component {
           />
           <Summary
             data={ this.state.data }
+            result={ this.state.result }
+          />
+          <Result
             result={ this.state.result }
           />
         </div>
